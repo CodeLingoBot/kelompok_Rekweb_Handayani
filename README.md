@@ -1,2 +1,13 @@
-# kelompok_Rekweb_Handayani
-Sistem Informasi Pelayanan Posyandu - Tugas Rekayasa Web - Kelompok Laravel Framework
+# SIPADU
+Sistem Informasi Pelayanan Posyandu
+
+Feature
+-  Pelayanan Kohort Ibu Hamil
+-  Pelayanan xxx
+- Pelayanan xxx
+- Pelayanan xxx
+
+
+Instalasi
+1. 
+ 
