@@ -29,25 +29,27 @@ $nama  = $this->session->userdata('nama');
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('home/dashboard')" aria-expanded="false">
                         <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a>
                 </li>
+                <?php
+                $level = $this->session->userdata('level');
+                $nik = $this->session->userdata('nik');
+                if ( $level != "pasien" ){
+                ?>
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('jenis_anggaran')" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('pasien')" aria-expanded="false">
                         <i class="mdi mdi-account-multiple"></i><span class="hide-menu">Pasien </span></a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('jenis_anggaran')" aria-expanded="false">
-                        <i class="mdi mdi-account-multiple"></i><span class="hide-menu">Bidan </span></a>
-                </li>
 
                   <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-database"></i><span class="hide-menu">Layanan</span></a>
                         <ul aria-expanded="false" class="collapse first-level">
 
                             <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('kasus')" aria-expanded="false">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('kohort/ibu_hamil/add')" aria-expanded="false">
                                     <i class="mdi mdi-city"></i><span class="hide-menu">Kohort Ibu Hamil</span></a>
                             </li>
                             <li class="sidebar-item">
-                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('kasus')" aria-expanded="false">
+                                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('kohort/persalinan/add')" aria-expanded="false">
                                     <i class="mdi mdi-city"></i><span class="hide-menu">Kohort Persalinan  </span></a>
                             </li>
                             <li class="sidebar-item">
@@ -61,6 +63,16 @@ $nama  = $this->session->userdata('nama');
 
                         </ul>
                     </li>
+
+                <?php }else{ ?>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" onclick="loadContent('pasien/detail/<?= $nik ?>')" aria-expanded="false">
+                            <i class="mdi mdi-account-multiple"></i><span class="hide-menu">Profil </span></a>
+                    </li>
+
+                <?php
+                }
+                ?>
 
             </ul>
         </nav>

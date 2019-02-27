@@ -22,6 +22,10 @@
 
 
     <style>
+
+        .page-wrapper{
+            background: #ffffff;
+        }
         .modal-header{
             background-color: #1e73f7;
             color:#fff;
@@ -48,6 +52,19 @@
             padding-bottom: 5px;
 
         }
+
+        #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6], #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul, #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6], #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul{
+            background: #eef5f9;
+        }
+
+        .customizer, .left-sidebar{
+            box-shadow: 1px 0 20px rgba(0, 0, 0, 0);
+        }
+
+        .table-bordered, .table-bordered td, .table-bordered th{
+            border:1px solid black;
+        }
+
     </style>
 
 </head>

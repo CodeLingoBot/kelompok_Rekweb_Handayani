@@ -84,18 +84,30 @@ $role = $this->input->get('role');
                                         <button class="btn btn-block btn-lg btn-info submit" type="button" id="login" >Masuk  <i class="ti-arrow-circle-right"></i> </button>
                                     </div>
                                 </div>
+                                <?php
+                                $role = $this->input->get('role');
+                                if ($role == "pasien"){
+                                ?>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 mt-2 text-center">
-                                        <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="ti-lock"></i> Lupa Password ?</a>
-
+                                        Belum punya akun ? <a href="<?= base_url()?>login/registrasi"  class="text-dark float-right"> Daftar Disini </a>
                                     </div>
                                 </div>
+                                <?php } ?>
                             </form>
                         </div>
                     </div>
+
                 </div>
 
+
+
+
+
+
             </div>
+
+
         </div>
 
     </div>
@@ -122,6 +134,13 @@ $role = $this->input->get('role');
     });
 
 
+    $('#loginform').on("click", function() {
+        $("#recoverform").slideUp();
+        $("#loginform").fadeIn();
+    });
+
+
+
     $(document).ready(function(){
 
         $('#login').click(function(){
@@ -140,6 +159,7 @@ $role = $this->input->get('role');
                     if(response.success==true){
 
                         window.location = "<?php echo base_url('home');?>"
+
                         $('.submit').html("<i class='fa fa-spinner faa-spin animated' style='margin-right:5px;'></i> Proses...");
 
                     }else{

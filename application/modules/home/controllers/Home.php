@@ -11,9 +11,14 @@ class Home extends BaseController
     public function index()
     {
       cek_session_admin();
+      $level = $this->session->userdata('level');
+      $nik = $this->session->userdata('nik');
+
+          $this->load->view('home/home');
+
    
 
-      $this->load->view('home/home');
+
     }
 
     public function dashboard()

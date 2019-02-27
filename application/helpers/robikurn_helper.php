@@ -6,6 +6,13 @@ function require_icon()
     return $c;
 }
 
+function get_age($dob)
+{
+    $diff = (date('Y') - date('Y',strtotime($dob)));
+    return $diff;
+
+}
+
 
 function get_code(){
       $ci = & get_instance();

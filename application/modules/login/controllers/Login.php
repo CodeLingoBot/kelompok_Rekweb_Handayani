@@ -12,15 +12,22 @@ class Login extends CI_Controller {
   {
     $this->load->helper('form');
 
-    if( $this->session->userdata('isLoggedIn') == 1 ) {
-      redirect('home');
-    } else {
-      echo $this->session->userdata('isLoggedIn');
+//    if( $this->session->userdata('isLoggedIn') == 1 ) {
+//      redirect('home');
+//    } else {
+//      echo $this->session->userdata('isLoggedIn');
       // redirect('login');
       $this->load->view('login');
-    }
+//    }
 
   }
+
+
+    function registrasi()
+    {
+        $this->load->view('registrasi');
+    }
+
 
   function level(){
       $this->load->view('level_user');

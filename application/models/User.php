@@ -31,6 +31,8 @@ Class User extends CI_Model
         $this->session->set_userdata( array(
                 'id'=>$this->details->id_pasien,
                 'nama'=>$this->details->nm_pasien,
+                'nik'=>$this->details->nik,
+
                 'level'=> $this->details->level,
                 'isLoggedIn'=>true
             )
